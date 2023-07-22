@@ -8,17 +8,20 @@ screen = pygame.display.set_mode(size)
 clock = pygame.time.Clock()
 
 # Parametros Constantes
-game_over = False
+
 background = pygame.image.load("img/fondo.jpg").convert()
 player = pygame.image.load("img/player.png").convert()
 player.set_colorkey([0,0,0])
+
+# Bucle principal
+game_over = False
 
 while not game_over:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
              game_over = True
     
-    # Parametros
+    # Parametros [Mouse Coordenadas]
     mouse_pos = pygame.mouse.get_pos()
     x = mouse_pos[0]
     y = mouse_pos[1]

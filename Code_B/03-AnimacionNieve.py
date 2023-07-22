@@ -2,11 +2,9 @@ import pygame, sys ,random
 
 pygame.init()
 
-# Ventana - Tamaño
+# Ventana - Tamaño Creacion Frame
 size = (800, 500)
-# Ventana - Creacion
 screen = pygame.display.set_mode(size)
-# Ventana - Frame
 clock = pygame.time.Clock()
 
 """ PARAMENTROS - INICIO"""
