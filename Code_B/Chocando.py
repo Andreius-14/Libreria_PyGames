@@ -3,10 +3,20 @@
 """
 
 import pygame, random
+pygame.init()
 
-WHITE = (255, 255, 255)
-BLACK = (0, 0, 0)
+# colores
+BLACK = (0,0,0)
+WHITE = (255,255,255)
+GREEN = (0,225,0)
+RED   = (225,0,0)
+BLUE   = (0,0,225)
 
+# Pantalla
+screen = pygame.display.set_mode([900, 600])
+clock = pygame.time.Clock()
+
+# Clases
 class Meteor(pygame.sprite.Sprite):
 	def __init__(self):
 		super().__init__()
@@ -23,15 +33,10 @@ class Player(pygame.sprite.Sprite):
 		self.image = pygame.transform.scale(self.image, (50, 50)) # Ajusta el tamaño de la imagen
 		self.rect = self.image.get_rect()
 
-pygame.init()
-screen = pygame.display.set_mode([900, 600])
-clock = pygame.time.Clock()
 
-# PARAMETROS
 
-done = False
+# PARAMETROS e INSTANCIAS
 score = 0
-
 meteor_list = pygame.sprite.Group()
 all_sprite_list = pygame.sprite.Group()
 
@@ -47,14 +52,15 @@ player = Player()
 all_sprite_list.add(player)
 
 
-#VENTANA DE JUEGO
+#Bucle Principal
+done = False
 
 while not done:
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
 			done = True
 
-    # PARAMETROS
+    # Parametros [Mouse Coordenadas]
 	mouse_pos = pygame.mouse.get_pos()
 	player.rect.x = mouse_pos[0]
 	player.rect.y = mouse_pos[1]
