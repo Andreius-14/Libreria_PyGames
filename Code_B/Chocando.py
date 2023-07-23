@@ -16,7 +16,7 @@ BLUE   = (0,0,225)
 screen = pygame.display.set_mode([900, 600])
 clock = pygame.time.Clock()
 
-# Clases
+# Clases - Creaccion de Objetos
 class Meteor(pygame.sprite.Sprite):
 	def __init__(self):
 		super().__init__()
@@ -65,7 +65,7 @@ while not done:
 	player.rect.x = mouse_pos[0]
 	player.rect.y = mouse_pos[1]
 
-    # COLISION
+    # COLISION Y Elim
 	meteor_hit_list = pygame.sprite.spritecollide(player, meteor_list, True)
 
     # 🌱 Imprime por consola - 

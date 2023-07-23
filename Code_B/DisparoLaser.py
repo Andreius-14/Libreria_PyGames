@@ -1,7 +1,6 @@
 import pygame, random
 
-BLACK = (0, 0, 0)
-
+# Clases
 class Meteor(pygame.sprite.Sprite):
 	def __init__(self):
 		super().__init__()
@@ -35,14 +34,22 @@ class Laser(pygame.sprite.Sprite):
 	def update(self):
 		self.rect.y -= 4
 
-
+# Inicializar Pygame
 pygame.init()
 
-SCREEN_WIDTH = 900
-SCREEN_HEIGHT = 600
-screen = pygame.display.set_mode([SCREEN_WIDTH, SCREEN_HEIGHT])
+# [Basic] Pantalla
+size = (900, 600)
+screen = pygame.display.set_mode(size)
 clock = pygame.time.Clock()
-done = False
+
+# [Basic] Constantes
+BLACK = (0, 0, 0)
+
+
+
+
+
+# [Basic] Variables
 score = 0
 
 meteor_list = pygame.sprite.Group()
@@ -51,7 +58,7 @@ laser_list = pygame.sprite.Group()
 
 for i in range(50):
 	meteor = Meteor()
-	meteor.rect.x = random.randrange(SCREEN_WIDTH - 20)
+	meteor.rect.x = random.randrange(600 - 20)
 	meteor.rect.y = random.randrange(450) 
 
 	meteor_list.add(meteor)
@@ -60,6 +67,8 @@ for i in range(50):
 player = Player()
 all_sprite_list.add(player)
 
+# Bucle Principal
+done = False
 while not done:
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
@@ -74,7 +83,7 @@ while not done:
 			all_sprite_list.add(laser)
 
 
-	all_sprite_list.update() 
+	all_sprite_list.update() # Especial - Llama la funcion update de cada clase para ejecutarse
 
 	for laser in laser_list:
 		meteor_hit_list = pygame.sprite.spritecollide(laser, meteor_list, True)	

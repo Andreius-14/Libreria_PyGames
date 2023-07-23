@@ -8,8 +8,7 @@ WHITE = (255, 255, 255)
 
 # [🌱] Tres Clases Principales [Game] [Meteor][Player] 
 
-# Cada instancia de Meteor Es un objeto individual
-
+# [Class-Objeto]
 class Meteor(pygame.sprite.Sprite):
 	def __init__(self):
 		super().__init__()
@@ -25,7 +24,7 @@ class Meteor(pygame.sprite.Sprite):
 			self.rect.y = -10
 			self.rect.x = random.randrange(SCREEN_WIDTH)
 
-
+# [Class-Objeto]
 class Player(pygame.sprite.Sprite):
 	def __init__(self):
 		super().__init__()
@@ -39,7 +38,7 @@ class Player(pygame.sprite.Sprite):
 		self.rect.x = mouse_pos[0]
 		self.rect.y = mouse_pos[1]
 
-
+# [Class-Principal]
 class Game(object):
 
 	def __init__(self):
@@ -122,11 +121,8 @@ def main():
     # 🌱 La ventana se Cierra - el while Termina 🌱
 	while not done:
 		done = game.process_events()
-
-        """CODIGO DEL JUEGO"""
-        game.run_logic()
+		game.run_logic()
 		game.display_frame(screen)
-        """CODIGO DEL JUEGO"""
 
 		clock.tick(60)
 	pygame.quit()

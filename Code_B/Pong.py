@@ -64,7 +64,7 @@ while not game_over:
         ### TECLADO PARAMETROS
 
     ### NIVEL FOR
-
+    
 	if pelota_y > 590 or pelota_y < 10:
 		pelota_speed_y *= -1
 
