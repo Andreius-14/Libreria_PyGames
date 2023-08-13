@@ -1,5 +1,21 @@
-Code_E  ->  COdigo del tutorial  🌱 https://www.youtube.com/watch?v=xjAvXGT5z3E&list=PLuB3bC9rWQAu6cGeRo_I6QV8cz1_2V6uM
+import pygame
 
+# Code_E  ->  COdigo del tutorial  🌱 https://www.youtube.com/watch?v=xjAvXGT5z3E&list=PLuB3bC9rWQAu6cGeRo_I6QV8cz1_2V6uM
+
+
+# 🌱 Dibujar 🌱 
+
+# 🖍️ Explicación para dibujar una línea
+# 🖍️ pygame.draw.line(surface, color, start [tupla (x, y)], end [tupla (x, y)], width)
+pygame.draw.line(screen, red, (100, 100), (300, 200), 5)
+
+# 🖍️ Explicación para dibujar un círculo
+# 🖍️ pygame.draw.circle(surface, color, center [tupla (x, y)], radius)
+pygame.draw.circle(screen, green, (400, 300), 50)
+
+# 🖍️ Explicación para dibujar un rectángulo
+# 🖍️ pygame.draw.rect(surface, color, rect [tupla (x, y, width, height)])
+pygame.draw.rect(screen, blue, (500, 400, 100, 50))
 
 
 '''
@@ -17,8 +33,10 @@ FUNCIONES pygame
 '''
 
 class Meteor(pygame.sprite.Sprite):
+    pass
 
 class Player(pygame.sprite.Sprite):
+    pass
 
 class NameClass(pygame.sprite.Sprite):
 	def __init__(self):
@@ -39,7 +57,8 @@ class Laser(pygame.sprite.Sprite):
 
 	def update(self):
 		self.rect.y -= 4
-        
+
+"""
 # Las clases pueden contener una funcion update - Debemos asignar cada instancias a un Array y usar el nameArrayAll.update()
     
     all_sprite_list = pygame.sprite.Group()     -- Array
@@ -47,10 +66,12 @@ class Laser(pygame.sprite.Sprite):
 
 
 # Las instancias o objetos creados antes de ponerlos en pantalla podemos agruparlos dentro de arrays ESpeciales
-meteor_list = pygame.sprite.Group()
-all_sprite_list = pygame.sprite.Group()
+    meteor_list = pygame.sprite.Group()
+    all_sprite_list = pygame.sprite.Group()
 
-all_sprite_list.draw(screen)
+    all_sprite_list.draw(screen)
 
 # COLISION Y Eliminacion
-meteor_hit_list = pygame.sprite.spritecollide(player, meteor_list, True)
+    meteor_hit_list = pygame.sprite.spritecollide(player, meteor_list, True)
+
+"""
