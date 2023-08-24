@@ -73,5 +73,13 @@ class Laser(pygame.sprite.Sprite):
 
 # COLISION Y Eliminacion
     meteor_hit_list = pygame.sprite.spritecollide(player, meteor_list, True)
+    
+    
+        # Tupla - x,y - solo x - Cuanto se desplazo con respecto a su ubicacion Anterior
+        self.rel = pg.mouse.get_rel()[0]
+        self.rel = max(-MOUSE_MAX_REL, min(MOUSE_MAX_REL, self.rel))
+        self.angle += self.rel * MOUSE_SENSITIVITY * self.game.delta_time
+
+
 
 """

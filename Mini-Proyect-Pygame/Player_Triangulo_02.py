@@ -81,9 +81,9 @@ class Game(object):
 			if event.type == pygame.QUIT:
 				return True
 
-			if event.type == pygame.MOUSEBUTTONDOWN:
-				if self.game_over:
-					self.__init__()
+			# if event.type == pygame.MOUSEBUTTONDOWN:
+			# 	if self.game_over:
+			# 		self.__init__()
 		return False
 
 	def run_logic(self):
